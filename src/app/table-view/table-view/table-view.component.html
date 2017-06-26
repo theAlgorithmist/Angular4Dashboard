@@ -1,0 +1,34 @@
+<div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+  <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+    <span class="md-title">Career Win/Loss</span>
+  </span>
+  <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+    <span *ngIf="selectedRows.length && selectable" class="md-body-1">0 item(s) selected</span>
+  </span>
+  <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+  </td-search-box>
+</div>
+
+<md-divider></md-divider>
+
+<td-data-table
+    #dataTable
+    [data]="filteredData"
+    [columns]="columns"
+    [selectable]="false"
+    [clickable]="false"
+    [multiple]="multiple"
+    [sortable]="true"
+    [sortBy]="sortBy"
+    [sortOrder]="sortOrder"
+    (sortChange)="sort($event)">
+</td-data-table>
+
+<div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+  <h3>No results to display.</h3>
+</div>
+
+<td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+  <span td-paging-bar-label hide-xs>Row per page:</span>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>

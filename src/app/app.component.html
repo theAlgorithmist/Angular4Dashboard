@@ -1,0 +1,65 @@
+<td-layout-nav toolbarTitle="{{title}}" logo="assets:algorithmist">
+
+  <td-layout-card-over cardTitle="ChartsJS Demo" cardSubtitle="Roger Federer vs. Tour Average" cardWidth="80">
+
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="4px">
+
+      <div fxFlex="50%">
+        <md-card class="card-padded">
+          <md-card-title>Rally Length</md-card-title>
+          <app-stacked-bar-chart></app-stacked-bar-chart>
+        </md-card>
+      </div>
+
+      <div fxFlex="50%">
+        <md-card class="card-padded">
+        <md-card-title>Shot Frequency</md-card-title>
+          <app-vertical-bar-chart></app-vertical-bar-chart>
+        </md-card>
+      </div>
+
+    </div>
+
+    <div flex class="spacing"></div>
+
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="4px">
+
+      <div fxFlex="50%">
+        <md-card class="card-padded">
+          <md-card-title>Winners</md-card-title>
+          <app-point-chart></app-point-chart>
+        </md-card>
+      </div>
+
+      <div fxFlex="50%">
+        <md-card class="card-padded">
+          <md-card-title>Unforced Errors</md-card-title>
+          <app-donut-chart></app-donut-chart>
+        </md-card>
+      </div>
+
+    </div>
+
+    <div flex class="spacing"></div>
+
+    <hr/>
+
+    <app-table-view></app-table-view>
+
+  </td-layout-card-over>
+
+  <td-layout-footer>
+    The Algorithmist (<a href="http://www.algorithmist.net" target="_blank">www.algorithmist.net</a>) &nbsp; &nbsp; <a href="http://www.tennisabstract.com/charting/RogerFederer.html" target="_blank">Chart Data Source</a>
+  </td-layout-footer>
+
+</td-layout-nav>
